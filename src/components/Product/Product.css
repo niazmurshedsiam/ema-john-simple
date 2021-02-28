@@ -13,3 +13,19 @@
     margin-right: 10px;
     padding: 10px;
 }
+p{
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+
+}
+.add-button{
+    background-color: goldenrod;
+    width: 150px;
+    height: 30px;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px;
+}
