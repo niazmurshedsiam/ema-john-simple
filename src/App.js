@@ -2,11 +2,12 @@ import "./App.css";
 import React from "react";
 import Header from "./components/Header";
 import Shop from "./components/Shop/Shop";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Review from "./components/Review/Review";
 import ManageInventory from "./ManageInventory/ManageInventory";
 import NotFound from "./NotFound/NotFound";
 import ProductDetail from "./ProductDetail/ProductDetail";
+
 function App() {
   return (
     <div>
