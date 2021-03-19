@@ -9,6 +9,7 @@ import NotFound from "./NotFound/NotFound";
 import ProductDetail from "./ProductDetail/ProductDetail";
 import Shipment from "./components/Shipment/Shipment";
 import Login from "./components/Login/Login";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 // import {createContext} from 'react';
 export const UserContext = createContext();
 function App() {
@@ -31,9 +32,9 @@ function App() {
           <Route path="/login">
               <Login></Login>
           </Route>
-          <Route path="/shipment">
+          <PrivateRoute path="/shipment">
               <Shipment></Shipment>
-          </Route>
+          </PrivateRoute>
           <Route path="/product/:productKey">
             <ProductDetail></ProductDetail>
           </Route>
