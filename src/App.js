@@ -1,5 +1,5 @@
 import "./App.css";
-import React from "react";
+import React, { createContext, useState } from "react";
 import Header from "./components/Header";
 import Shop from "./components/Shop/Shop";
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
@@ -9,10 +9,13 @@ import NotFound from "./NotFound/NotFound";
 import ProductDetail from "./ProductDetail/ProductDetail";
 import Shipment from "./components/Shipment/Shipment";
 import Login from "./components/Login/Login";
-
+// import {createContext} from 'react';
+export const UserContext = createContext();
 function App() {
+  const [loggedInUser,setLoggedInUser] = useState({});
   return (
-    <div>
+    <UserContext.Provider value={[loggedInUser,setLoggedInUser]}>
+      <h4>Login {loggedInUser.email}</h4>
       <Header></Header>
       <Router>
         <Switch>
@@ -45,7 +48,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-    </div>
+    </UserContext.Provider>
   );
 }
 

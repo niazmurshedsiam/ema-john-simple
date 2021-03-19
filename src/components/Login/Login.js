@@ -1,7 +1,8 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from "./firebase.config";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { UserContext } from "../../App";
 
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
@@ -17,6 +18,8 @@ function Login() {
     password: "",
     photo: "",
   });
+
+  const [loggedInUser,setLoggedInUser] = useContext(UserContext);
   const provider = new firebase.auth.GoogleAuthProvider();
   const handleSignin = () => {
     firebase
@@ -116,6 +119,7 @@ function Login() {
       const newUserInfo = { ...user };
       newUserInfo[event.target.name] = event.target.value;
       setUser(newUserInfo);
+      setLoggedInUser(newUserInfo);
     }
   };
   const updateUserName = (name) => {
